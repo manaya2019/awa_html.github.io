@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Animated barchart</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1> Découvre comment faire des visualisations avec Plotly express! </h1>
+		<p> Ce tutoriel te permettra de réaliser un diagramme en bar interactif sur ton notebook, grâce aux codes suivanst et en 3 étapes seulement. </p>
+
+		<h2> Etape 1 : Import librairies plotly express et pandas </h2>
+			<p> 
+				<em>import plotly.express as px <br>
+				import pandas as pd</em></p>
+
+		<h2> Etape 2 : Téléchargement des données</h2>
+			<p>
+			<em> df_weather = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests/weather2019.csv')</em></p>
+			<img src="static\df_img.PNG" alt="viz" width="500" height="200" >	
+			<!-- <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">  -->
+			</p>
+
+		 <h2> Etape 3 : Visualisation</h2>
+		 <p>
+		 	Ecrivez le code suivant:<br>
+		 	<!-- #variations des températures max par jour <br>  -->
+			<em>fig = px.bar(df_weather, x="DAY", y="MAX_TEMPERATURE_C", color="mois", hover_name='DATE',<br>
+			  animation_frame="MONTH", animation_group="DAY",title="Variations des températures max journalières en 2019", range_y=[0, 40])<br>
+			fig.show()</em><br>
+			Voici le résultat en image!
+		</p>
+		<!-- <a href="file:///C:/Users/sowaw/Downloads/temp-plot.html"></a> -->
+		<!-- <img href="file:///C:/Users/sowaw/Downloads/temp-plot.html" alt="Girl in a jacket" width="500" height="600"> -->
+				<iframe src="file:///C:/Users/sowaw/Downloads/temp-plot.html" title="Barplot interactif" width="850" height="500"></iframe>			
+	<!-- <h3> On peut créer jusqu'à six niveaux de titres </h3>
+	<h4> Titre de niveau 4 </h4>
+	<h5> Titre de niveau 5 </h5>
+	<h6> Titre de niveau 6 </h6>
+	<!-- <p> Chaque titre peut contenir du texte, comme ici </p> --> 
+</body> 
+</html>
